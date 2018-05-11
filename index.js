@@ -18,7 +18,7 @@ client.on('message', msg => {
   const args = msg.content.slice('!!'.length).split(' ');
   const command = args.shift().toLowerCase();
   if (command === 'ping') {
-    msg.channel.send(`Pong! My latency is: ${~~(client.ping)}ms`)
+    msg.channel.send(`Pong! My latency is: ${~~(client.ping)}ms`);
   }
 
 client.login(process.env.TOKEN);
