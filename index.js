@@ -12,3 +12,5 @@ Users: ${client.users.size}
   console.log("Diamond is in: " + client.guilds.size + " servers.");
   client.user.setActivity(`!! - In ${client.guilds.size} guilds!`);
 });
+
+client.login(process.env.TOKEN);
