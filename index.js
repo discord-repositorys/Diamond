@@ -20,5 +20,8 @@ client.on('message', msg => {
   if (command === 'ping') {
     msg.channel.send(`Pong! My latency is: ${~~(client.ping)}ms`);
   }
-
+  
 client.login(process.env.TOKEN);
+
+  
+  
