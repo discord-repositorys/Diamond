@@ -316,7 +316,7 @@ client.on('message', msg => {
   
     if (command === 'avatar') {
         let user = msg.mentions.members.first() || msg.member;
-        msg.channel.send(`${user.user.avatarURL}`)
+        msg.channel.send(`tryna fix avatar`)
     }
   if (command === 'help') {
       msg.channel.send(`
