@@ -25,7 +25,7 @@ class Help extends Command {
           output += `\u200b\n== ${cat} ==\n`;
           currentCategory = cat;
         }
-        output += `+${c.name}${" ".repeat(longest - c.name.length)} :: ${c.description}\n`;
+        output += `!!${c.name}${" ".repeat(longest - c.name.length)} :: ${c.description}\n`;
       });
       message.channel.send(output, { code: "asciidoc", split: { char: "\u200b" } });
     } else {
