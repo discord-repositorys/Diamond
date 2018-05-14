@@ -13,7 +13,7 @@ class Ping extends Command {
   run(message, args) {
     message.channel.send("Pong!")
       .then(msg => {
-        msg.edit(`Pong! Latency: **${msg.createdTimestamp - message.createdTimestamp}** ms, API Latency: ${Math.floor(this.client.ping)}`);
+        msg.edit(`Pong! Latency: **${msg.createdTimestamp - message.createdTimestamp}** ms, API Latency: **${Math.floor(this.client.ping)}** ms`);
       });
   }
 }
