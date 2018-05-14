@@ -313,11 +313,10 @@ client.on('message', msg => {
 
           }
       }
-  if (command === 'avatar') {
+  
+    if (command === 'avatar') {
         let user = msg.mentions.members.first() || msg.member;
-        const embed = new discord.RichEmbed()
-            .setImage(`${user.user.displayAvatarURL}`)
-            msg.channel.send({embed})
+        msg.channel.send(`${user.user.displayAvatarURL}`)
     }
   if (command === 'help') {
       msg.channel.send(`
