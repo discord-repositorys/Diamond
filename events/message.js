@@ -11,7 +11,7 @@ module.exports = async(client, message) => {
   if(message.guild) if(!message.guild.me.permissionsIn(message.channel).has("SEND_MESSAGES")) return;
   
   // Arguments
-  const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
   // Getting the command

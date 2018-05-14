@@ -56,7 +56,7 @@ client
     const events = await readdir("./events");
     console.log(`Loading a total of ${events.length} events!`);
     events.forEach(x => {
-      if(x.endsWith(".js")) return; // ignore non js files.
+      if(!x.endsWith(".js")) return; // ignore non js files.
       const ev = require(`./events/${x}`);
       if(typeof ev !== "function") return console.warn(`./events/${x} does not export a funtion, aborting load...`);
       const name = x.split(".")[0];
