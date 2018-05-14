@@ -18,4 +18,4 @@ class Invite extends Command {
   }
 }
 
-module.exports = Ping;
+module.exports = Invite;
