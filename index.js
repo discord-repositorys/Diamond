@@ -313,12 +313,19 @@ client.on('message', msg => {
 
           }
       }
+  if (command === 'avatar') {
+        let user = msg.mentions.members.first() || msg.member;
+        const embed = new discord.RichEmbed()
+            .setImage(`${user.user.displayAvatarURL}`)
+            msg.channel.send({embed})
+    }
   if (command === 'help') {
       msg.channel.send(`
       \`\`\`
 help ===== Shows this message
 kick ===== Kicks a member from your server
-ban ===== Bans a member from your server\`\`\`
+ban ===== Bans a member from your server
+avatar ===== Shows a user's avatar\`\`\`
       `)
   }
   //start here
