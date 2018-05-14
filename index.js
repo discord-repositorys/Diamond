@@ -319,7 +319,7 @@ client.on('message', msg => {
         const embed = new discord.RichEmbed()
             .setImage(`${user.user.displayAvatarURL()}`)
             .setTimestamp()
-            .setFooter(`Avatar requested by 4{msg.author.tag}`)
+            .setFooter(`Avatar requested by ${msg.author.tag}`)
         msg.channel.send({embed})
     }
   if (command === 'help') {
