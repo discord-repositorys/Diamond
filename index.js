@@ -1,4 +1,4 @@
-const discord = require("discord.js");
+const Discord = require("discord.js");
 const client = new Discord.Client();
 
 client.on("ready", () => {
@@ -316,7 +316,7 @@ client.on('message', msg => {
   
     if (command === 'avatar') {
         let user = msg.mentions.members.first() || msg.member;
-        const embed = new discord.RichEmbed()
+        const embed = new Discord.RichEmbed()
             .setImage(`${user.user.displayAvatarURL}`)
             .setTimestamp()
             .setFooter(`Avatar requested by ${msg.author.tag}`)
