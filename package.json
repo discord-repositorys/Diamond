@@ -29,7 +29,6 @@
     "webhooks4discord": "^1.0.0",
     "humanize-duration": "^3.14.0",
     "figlet": "^1.2.0",
-    "pm2": "^2.10.3",
     "fast-html-parser": "^1.0.1",
     "querystring": "^0.2.0",
     "unfluff": "^3.0.0",
@@ -43,6 +42,6 @@
     "github": "^13.0.1",
     "memejs": "^1.0.7",
     "relevant-urban": "^2.0.0",
-    "https": "^1.0.0"
+    "klaw": "^2.1.1"
   }
 }
