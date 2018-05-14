@@ -320,6 +320,7 @@ client.on('message', msg => {
             .setImage(`${user.user.displayAvatarURL()}`)
             .setTimestamp()
             .setFooter(`Avatar requested by 4{msg.author.tag}`)
+        msg.channel.send({embed})
     }
   if (command === 'help') {
       msg.channel.send(`
