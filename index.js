@@ -317,7 +317,7 @@ client.on('message', msg => {
     if (command === 'avatar') {
         let user = msg.mentions.members.first() || msg.member;
         msg.channel.send({embed:{
-          title: "The user's avatar.".
+          title: "The user's avatar.",
           url: `${user.user.avatarURL}`,
           description: `${user.user.displayAvatarURL}`
         }})
