@@ -318,7 +318,7 @@ client.on('message', msg => {
         let user = msg.mentions.members.first() || msg.member;
         msg.channel.send({embed:{
           title: "The user's avatar.".
-          url: `${user.user.avatarURL},
+          url: `${user.user.avatarURL}`,
           description: `${user.user.displayAvatarURL}`
         }})
     }
