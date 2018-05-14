@@ -317,7 +317,7 @@ client.on('message', msg => {
     if (command === 'avatar') {
         let user = msg.mentions.members.first() || msg.member;
         const embed = new discord.RichEmbed()
-            .setImage(`${user.user.displayAvatarURL()}`)
+            .setImage(`${user.user.displayAvatarURL}`)
             .setTimestamp()
             .setFooter(`Avatar requested by ${msg.author.tag}`)
         msg.channel.send({embed})
