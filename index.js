@@ -9,9 +9,9 @@ Bot Id: ${client.user.id}
 Servers: ${client.guilds.size}
 Users: ${client.users.size}
 ########################`.trim());
-  console.log("Diamond is in: " + client.guilds.size + " servers.");
-  client.user.setActivity(`!! - In ${client.guilds.size} guilds!`); 
- })
+  console.log("Cryptide is in: " + client.guilds.size + " servers.");
+  client.user.setActivity(`d.help - In ${client.guilds.size} guilds!`);
+});
 
 client.on('message', msg => {
   if (!msg.content.startsWith('!!')) return;
