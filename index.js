@@ -54,6 +54,7 @@ client
     .on("error", (err) => console.error(err));
     
     const events = await readdir("./events");
+    console.log(`Loading a total of ${events.length} events!`);
     events.forEach(x => {
       if(x.endsWith(".js")) return; // ignore non js files.
       const ev = require(`./events/${x}`);
