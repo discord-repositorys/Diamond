@@ -47,8 +47,8 @@ client
     .on("data", (file) => {
       const cmd = path.parse(file.path);
       if(!cmd.ext || cmd.ext !== ".js") return; // ignore non js files.
-      client.loadCommand(cmd.path, cmd.name);
-      command.push(cmd.name);
+      client.loadCommand(cmd.dir, cmd.name + cmd.ext);
+      commands.push(cmd.name);
     })
     .on("end", () => console.log(`Loaded a total of ${commands.length} commands!`))
     .on("error", (err) => console.error(err));
