@@ -164,7 +164,8 @@ client.on('message', msg => {
             
         } 
     }
-  }   
+  }             
+    
   if(command === 'kick') {
       if (msg.channel.permissionsFor(client.user).has("EMBED_LINKS") && msg.channel.permissionsFor(client.user).has("KICK_MEMBERS")) {
           const user = msg.guild.member(msg.mentions.users.first()) || msg.guild.member(args[0]);
@@ -244,7 +245,7 @@ client.on('message', msg => {
                     icon_url: msg.author.displayAvatarURL
                 },
                 title: ":x: Cannot kick user!",
-                description: "You can not kick yourself.",
+                description: "You cannot kick yourself.",
                 timestamp: new Date(),
                 footer: {
                     icon_url: msg.author.displayAvatarURL,
@@ -312,6 +313,15 @@ client.on('message', msg => {
 
           }
       }
-})
+  if (command === 'help') {
+      msg.channel.send(`
+      \`\`\`
+help ===== Shows this message
+kick ===== Kicks a member from your server
+ban ===== Bans a member from your server\`\`\`
+      `)
+  }
+  //start here
+});
   
 client.login(process.env.TOKEN);
