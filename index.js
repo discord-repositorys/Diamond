@@ -28,13 +28,13 @@ client.on('message', msg => {
                 color: 0x000000,
                 author: {
                     name: msg.author.tag,
-                    icon_url: msg.author.displayAvatarURL
+                    icon_url: msg.author.displayAvatarURL()
                 },
                 title: ":x: You lack permission.",
                 description: `${msg.author.tag} lacks the permissions to use the \`ban\` command`,
                 timestamp: new Date(),
                 footer: {
-                    name: msg.author.displayAvatarURL,
+                    name: msg.author.displayAvatarURL(),
                     text: `${msg.author.tag} tried to use the \`ban\` command.`
                 }
             }
@@ -45,13 +45,13 @@ client.on('message', msg => {
                 color: 0x00ff00,
                 author: {
                     name: msg.author.tag,
-                    icon_url: msg.author.displayAvatarURL
+                    icon_url: msg.author.displayAvatarURL()
                 },
                 title: ":x: Diamond lacks the permissions.",
                 description: "Please give Diamond the `Embed Links` permission.",
                 timestamp: new Date(),
                 footer: {
-                    icon_url: msg.author.displayAvatarURL,
+                    icon_url: msg.author.displayAvatarURL(),
                     text: `Bot lacks permission.`
                 }
             }
@@ -62,13 +62,13 @@ client.on('message', msg => {
                 color: 0x000000,
                 author: {
                     name: msg.author.tag,
-                    icon_url: msg.author.displayAvatarURL
+                    icon_url: msg.author.displayAvatarURL()
                 },
                 title: ":x: Diamond lacks the permissions.",
                 description: "Please give Diamond the `Ban Members` permission.",
                 timestamp: new Date(),
                 footer: {
-                    icon_url: msg.author.displayAvatarURL,
+                    icon_url: msg.author.displayAvatarURL(),
                     text: `Bot lacks permission.`
                 }
             }
@@ -79,13 +79,13 @@ client.on('message', msg => {
               color: 0x000000,
               author: {
                   name: msg.author.tag,
-                  icon_url: msg.author.displayAvatarURL
+                  icon_url: msg.author.displayAvatarURL()
               },
               title: ":x: Cannot ban user!",
               description: "Diamond cannot ban itself",
               timestamp: new Date(),
               footer: {
-                  icon_url: msg.author.displayAvatarURL,
+                  icon_url: msg.author.displayAvatarURL(),
                   text: `${msg.author.tag} failed to ban ${client.tag}.`
               }
             } 
@@ -96,13 +96,13 @@ client.on('message', msg => {
               color:0x000000,
               author: {
                   name: msg.author.tag,
-                  icon_url: msg.author.displayAvatarURL
+                  icon_url: msg.author.displayAvatarURL()
               },
               title: ":x: Cannot ban user!",
               description: "You cannot ban yourself.",
               timestamp: new Date(),
               footer: {
-                  icon_url: msg.author.displayAvatarURL,
+                  icon_url: msg.author.displayAvatarURL(),
                   text: `${msg.author.tag} failed to ban ${user.user.tag}.`
               }
             } 
@@ -113,13 +113,13 @@ client.on('message', msg => {
              color:0x00000,
              author: {
                  name : msg.author.tag,
-                 icon_url: msg.author.displayAvatarURL
+                 icon_url: msg.author.displayAvatarURL()
              },
              title: ":x: Cannot ban user!",
              description: "Diamond can not find the user in this server.",
              timestamp: new Date(),
              footer: {
-                 icon_url: msg.author.displayAvatarURL,
+                 icon_url: msg.author.displayAvatarURL(),
                  text: `${client.tag} can not find the tagged user.`
              }   
             }
@@ -131,13 +131,13 @@ client.on('message', msg => {
                   color:0x000000,
                   author: {
                       name: msg.author.tag,
-                      icon_url: msg.author.displayAvatarURL
+                      icon_url: msg.author.displayAvatarURL()
                   },
                   title: ":x: Cannot ban user!",
                   description: "Please provide a reason for ban the user.",
                   timestamp: new Date(),
                   footer: {
-                      icon_url: msg.author.displayAvatarURL,
+                      icon_url: msg.author.displayAvatarURL(),
                       text: `${msg.author.tag} failed to ban ${user.user.tag}`
                   }
                 }
@@ -148,13 +148,13 @@ client.on('message', msg => {
                   color: 0x000000,
                   author: {
                       name: msg.author.tag,
-                      icon_url: msg.author.displayAvatarURL
+                      icon_url: msg.author.displayAvatarURL()
                   },
                   title: ":white_check_mark: Banned user!",
                   description: `${client.user} has banned ${user.user.tag}!`,
                   timestamp: new Date(),
                   footer: {
-                      icon_url: msg.author.displayAvatarURL,
+                      icon_url: msg.author.displayAvatarURL(),
                       text: `${msg.author.tag} performed the action.`
                   }
                 }
@@ -174,13 +174,13 @@ client.on('message', msg => {
                   color: 0x000000,
                   author: {
                       name: msg.author.tag,
-                      icon_url: msg.author.displayAvatarURL
+                      icon_url: msg.author.displayAvatarURL()
                   },
                   title: ":x: You lack permission.",
                   description: `${msg.author.tag} lacks the permissions to use the \`kick\` command`,
                   timestamp: new Date(),
                   footer: {
-                      name: msg.author.displayAvatarURL,
+                      name: msg.author.displayAvatarURL(),
                       text: `${msg.author.tag} tried to use the \`kick\` command.`
                   }
               }
@@ -191,13 +191,13 @@ client.on('message', msg => {
                   color: 0x00ff00,
                   author: {
                       name: msg.author.tag,
-                      icon_url: msg.author.displayAvatarURL
+                      icon_url: msg.author.displayAvatarURL()
                   },
                   title: ":x: Diamond lacks the permissions.",
                   description: "Please give Diamond the `Embed Links` permission.",
                   timestamp: new Date(),
                   footer: {
-                      icon_url: msg.author.displayAvatarURL,
+                      icon_url: msg.author.displayAvatarURL(),
                       text: `Bot lacks permission.`
                   }
               }
@@ -208,13 +208,13 @@ client.on('message', msg => {
                   color: 0x000000,
                   author: {
                       name: msg.author.tag,
-                      icon_url: msg.author.displayAvatarURL
+                      icon_url: msg.author.displayAvatarURL()
                   },
                   title: ":x: Diamond lacks the permissions.",
                   description: "Please give Diamond the `Kick Members` permission.",
                   timestamp: new Date(),
                   footer: {
-                      icon_url: msg.author.displayAvatarURL,
+                      icon_url: msg.author.displayAvatarURL(),
                       text: `Bot lacks permission.`
                   }
               }
@@ -225,13 +225,13 @@ client.on('message', msg => {
                 color: 0x000000,
                 author: {
                     name: msg.author.tag,
-                    icon_url: msg.author.displayAvatarURL
+                    icon_url: msg.author.displayAvatarURL()
                 },
                 title: ":x: Cannot kick user!",
                 description: "Diamond cannot kick itself",
                 timestamp: new Date(),
                 footer: {
-                    icon_url: msg.author.displayAvatarURL,
+                    icon_url: msg.author.displayAvatarURL(),
                     text: `${msg.author.tag} failed to kick ${client.tag}.`
                 }
               } 
@@ -242,13 +242,13 @@ client.on('message', msg => {
                 color:0x000000,
                 author: {
                     name: msg.author.tag,
-                    icon_url: msg.author.displayAvatarURL
+                    icon_url: msg.author.displayAvatarURL()
                 },
                 title: ":x: Cannot kick user!",
                 description: "You cannot kick yourself.",
                 timestamp: new Date(),
                 footer: {
-                    icon_url: msg.author.displayAvatarURL,
+                    icon_url: msg.author.displayAvatarURL(),
                     text: `${msg.author.tag} failed to kick ${user.user.tag}.`
                 }
               }
@@ -259,13 +259,13 @@ client.on('message', msg => {
                color:0x00000,
                author: {
                    name : msg.author.tag,
-                   icon_url: msg.author.displayAvatarURL
+                   icon_url: msg.author.displayAvatarURL()
                },
                title: ":x: Cannot kick user!",
                description: "Diamond can not find the user in this server.",
                timestamp: new Date(),
                footer: {
-                   icon_url: msg.author.displayAvatarURL,
+                   icon_url: msg.author.displayAvatarURL(),
                    text: `${client.tag} can not find the tagged user.`
                }   
               }
@@ -277,13 +277,13 @@ client.on('message', msg => {
                     color:0x000000,
                     author: {
                         name: msg.author.tag,
-                        icon_url: msg.author.displayAvatarURL
+                        icon_url: msg.author.displayAvatarURL()
                     },
                     title: ":x: Cannot kick user!",
                     description: "Please provide a reason for kicking the user.",
                     timestamp: new Date(),
                     footer: {
-                        icon_url: msg.author.displayAvatarURL,
+                        icon_url: msg.author.displayAvatarURL(),
                         text: `${msg.author.tag} failed to kick ${user.user.tag}`
                     }
                   }
@@ -294,13 +294,13 @@ client.on('message', msg => {
                     color: 0x000000,
                     author: {
                         name: msg.author.tag,
-                        icon_url: msg.author.displayAvatarURL
+                        icon_url: msg.author.displayAvatarURL()
                     },
                     title: ":white_check_mark: Kicked user!",
                     description: `${client.user} has kicked ${user.user.tag}!`,
                     timestamp: new Date(),
                     footer: {
-                        icon_url: msg.author.displayAvatarURL,
+                        icon_url: msg.author.displayAvatarURL(),
                         text: `${msg.author.tag} performed the action.`
                     }
                   }
@@ -316,7 +316,7 @@ client.on('message', msg => {
   
     if (command === 'avatar') {
         let user = msg.mentions.members.first() || msg.member;
-        msg.channel.send(`${user.user.avatarURL} is ${user.mentions} avatar.`)
+        msg.channel.send(`${user.user.displayAvatarURL()}`}
     }
   if (command === 'help') {
       msg.channel.send(`
