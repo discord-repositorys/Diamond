@@ -23,9 +23,9 @@ class Hastebin extends Command {
         .setDescription("Click the link above, or click here.")
         .setURL(hastLink)
         .setTimestamp()
-        .setFooter(`Hastbin made by: ${msg.author.tag}`)
-      message.channel.send({embed: hastEmb})
-  }).catch(console.error);
+        .setFooter(`Hastbin made by: ${msg.author.tag}`);
+      message.channel.send({embed: hastEmb});
+  });
 }
 
 module.exports = Hastebin;
