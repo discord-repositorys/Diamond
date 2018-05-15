@@ -24,7 +24,7 @@ class Hastebin extends Command {
         .setURL(hastLink)
         .setTimestamp()
         .setFooter(`Hastbin made by: ${msg.author.tag}`)
-      message.channel.send({embed: hastEmb}).
+      message.channel.send({embed: hastEmb})
   }).catch(console.error);
 }
 
