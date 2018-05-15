@@ -19,7 +19,7 @@ class Google extends Command {
     }
         
 
-async run (client, message, args) => {
+async run (client, message, args) {
     const time = Date.now();
     const term = args.join(' ');
     const searchurl = 'http://google.com/search?safe=active&gl=uk&hl=en&q=' + encodeURIComponent(term);
