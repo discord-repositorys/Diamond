@@ -5,7 +5,21 @@ const { parse: qs } = require('querystring');
 const { lazy: uf } = require('unfluff');
 const Discord = require('discord.js');
 const profanities = require('profanities');
-module.exports.run = async (client, message, args) => {
+
+class Google extends Command {
+    constructor(client) {
+        super(client, {
+            name: "google",
+            description: "Google something!",
+            usage: "google [text]",
+            catagory: "Misc",
+            extended: "Google something. Simple as that.",
+            aliases: ["g", "bing"]
+          });
+    }
+        
+
+run = async (client, message, args) => {
     const time = Date.now();
     const term = args.join(' ');
     const searchurl = 'http://google.com/search?safe=active&gl=uk&hl=en&q=' + encodeURIComponent(term);
