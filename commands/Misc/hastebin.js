@@ -18,9 +18,13 @@ class Hastebin extends Command {
     hastebin(args.join(' '), "js").then(r => {
       var hastLink = r
       const hastEmb = new Discord.RichEmbed()
-      .setURL(hastLink)
-      .addField(`Link:`, `${hastLink})
-      message.channel.send({embed: hastEmb})
+        .setTitle("Your hastebin link.")
+        .setURL(hastLink)
+        .setDescription("Click the link above, or click here.")
+        .setURL(hastLink)
+        .setTimestamp()
+        .setFooter(`Hastbin made by: ${msg.author.tag}`)
+      message.channel.send({embed: hastEmb}).
   }).catch(console.error);
 }
 
