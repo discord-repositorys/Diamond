@@ -92,3 +92,5 @@ run = async (client, message, args) => {
         embed
     });
 }
+
+module.exports = Google;
