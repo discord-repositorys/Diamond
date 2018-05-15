@@ -1,3 +1,4 @@
+const Command = require("../../base/Command.js");
 const Discord = require('discord.js');
 const { RichEmbed } = require("discord.js");
 
@@ -10,6 +11,7 @@ class Hastebin extends Command {
       catagory: "Misc",
       extended: "Make an easy to use hastebin file.",
       aliases: ["hbin", "haste", "bin"],
+      cooldown: 3
     });
   }
   
