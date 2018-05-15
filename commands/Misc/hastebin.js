@@ -8,7 +8,7 @@ class Hastebin extends Command {
       name: "hastebin",
       description: "Make a file in Hastebin.",
       usage: "hastebin <code>",
-      catagory: "Misc",
+      category: "Misc",
       extended: "Make an easy to use hastebin file.",
       aliases: ["hbin", "haste", "bin"],
       cooldown: 3
