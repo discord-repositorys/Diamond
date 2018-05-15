@@ -15,9 +15,12 @@ class Avatar extends Command {
   
   run(message, args) {
     const user = message.mentions.users.first() || message.author;
+    let av = user.displayAvatarURL;
+    if(!av.includes("size")) av += "?size=2048";
+    else av = av.replace("1028", "2048");
     const embed = new RichEmbed()
       .setTitle(`${user.tag}'s avatar`)
-      .setImage(user.displayAvatarURL)
+      .setImage(av)
       .setFooter(`Requested by ${message.author.tag}`);
       
     message.channel.send({ embed });
