@@ -21,7 +21,7 @@ module.exports = (client) => {
     return new Promise((resolve, reject) => {
       superagent.post("https://hastebin.com/documents")
         .send(text)
-        .then(res => resolve(`https://hastebin.com/${res.key}${ code ? "." + code : "" }`)).catch(reject);
+        .then(res => resolve(`https://hastebin.com/${res.body.key}${ code ? "." + code : "" }`)).catch(reject);
     });
   };
   
