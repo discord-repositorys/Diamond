@@ -4,7 +4,7 @@ const { RichEmbed } = require("discord.js");
 
 class Hastebin extends Command {
   constructor(client) {
-    super(client {
+    super(client, {
       name: "hastebin",
       description: "Make a file in Hastebin.",
       usage: "hastebin [code]",
