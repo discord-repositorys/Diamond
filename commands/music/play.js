@@ -23,6 +23,7 @@ run(message, args) {
 chan.join()
   .then(connection => {
   const dispatcher = connection.playStream(ytdl(song, { audioonly: true }));
+  message.channel.send(`Now playing: ${song}`)
   dispatcher.on("end", () => chan.leave());
 }).catch(console.error);
 }
