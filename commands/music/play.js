@@ -25,7 +25,6 @@ chan.join()
   const dispatcher = connection.playStream(ytdl(song, { audioonly: true }));
   message.channel.send(`Now playing: ${song}`)
   dispatcher.on("end", () => chan.leave());
-  message.channel.send(`Leaving the voice chat now. Queue more songs to rock on!`);
 }).catch(console.error);
 }
 }  
