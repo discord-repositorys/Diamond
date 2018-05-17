@@ -26,5 +26,6 @@ chan.join()
   dispatcher.on("end", () => chan.leave());
 }).catch(console.error);
 }
+}  
   
 module.exports = Play;
