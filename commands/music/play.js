@@ -13,20 +13,22 @@ class Play extends Command {
       aliases: ["p"]
     });
   }
-      
-
-run(message, args) {
-  const chan = message.member.voiceChannel;
-  if(!chan) return message.reply("You need to be in a voice channel!");
-  const song = args.join(" ");
-  if(!song) return message.reply("Provide a youtube link to play!");
-chan.join()
-  .then(connection => {
-  const dispatcher = connection.playStream(ytdl(song, { audioonly: true }));
-  message.channel.send(`Now playing: ${song}`)
-  dispatcher.on("end", () => chan.leave());
-}).catch(console.error);
-}
-}  
   
+  run(message, args) {
+    const chan = message.member.voiceChannel;
+    if(!chan) return message.reply("You need to be in a voice channel!");
+    const song = args.join(" ");
+    if(!song) return message.reply("Provide a youtube link to play or search!");
+    chan.join().then(con => {
+      const res = await this.client.music.getVideos(song);
+      if (!res.length) {
+        con.play(ytdl(song.url, { filter: "audioonly" }));
+        message.channel.send(`Now playing: **${song.title}**`);
+      } else {
+        con.play(ytdl(song[0].url, { filter: "audioonly" }));
+        message.channel.send(`Now playing: **${song[0].title}**`);
+      }
+    });
+  }
+}
 module.exports = Play;
