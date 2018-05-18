@@ -21,7 +21,7 @@ module.exports = class MusicManager extends Map {
      * @param { string } url The url of the video.
      * @returns { Promise<Object | Array<Object>> }
      */
-    getVideos(url) {
+    async getVideos(url) {
         if (url.match(/https:\/\/?(www\.)?youtube\.com\/watch\?v=(.*)/)) {
             Yt.getVideoByID(url[2])
                 .then(v => { Promise.resolve(v); return; })
