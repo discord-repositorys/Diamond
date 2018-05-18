@@ -8,7 +8,7 @@ class Play extends Command {
       name: "play",
       description: "Play a song!",
       usage: "play [song]",
-      catagory: "Music",
+      category: "Music",
       extended: "Play a song from YouTube.",
       aliases: ["p"]
     });
