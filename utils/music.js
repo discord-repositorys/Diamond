@@ -1,3 +1,5 @@
+let music = {};
+
 function getID(str, callback) {
         if(str.includes("youtube.com")){
             callback(getYouTubeID(str));
