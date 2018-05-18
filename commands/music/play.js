@@ -20,14 +20,30 @@ class Play extends Command {
     const song = args.join(" ");
     if(!song) return message.reply("Provide a youtube link to play or search!");
     chan.join().then(async con => {
-      const res = await this.client.music.getVideos(song);
-      console.log(res);
-      if (!res[0]) {
-        con.play(ytdl(song.url, { filter: "audioonly" }));
-        message.channel.send(`Now playing: **${song.title}**`);
+      if (song.match(/https:\/\/?www\.?youtube\.com\/watch\?v=(.*)/)) {
+        try {
+          const video = this.client.music.fromURL(song[2]);
+          con.play(ytdl(video.url, { filter: "audioonly" }));
+          message.channel.send(`Now playing from url: **${video.title}**`); 
+        } catch (error) {
+          return message.channel.send(`\`\`\`js\n${e.stack}\`\`\``);
+        }
+      } else if (song.match(/https:\/\/?(www\.)?youtu\.be\/(.*)/)) {
+        try {
+          const video = this.client.music.fromURL(song[2]);
+          con.play(ytdl(video.url, { filter: "audioonly" }));
+          message.channel.send(`Now playing from url: **${video.title}**`); 
+        } catch (error) {
+          return message.channel.send(`\`\`\`js\n${e.stack}\`\`\``);
+        }
       } else {
-        con.play(ytdl(song[0].url, { filter: "audioonly" }));
-        message.channel.send(`Now playing: **${song[0].title}**`);
+        try {
+          const videos = this.client.music.fromSearch(song);
+          con.play(ytdl(videos[0].url, { filter: "audioonly" }));
+          message.channel.send(`Now playing from search: **${videos[0].title}**`); 
+        } catch (error) {
+          return message.channel.send(`\`\`\`js\n${e.stack}\`\`\``);
+        }
       }
     });
   }

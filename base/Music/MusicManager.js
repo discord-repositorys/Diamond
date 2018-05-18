@@ -18,30 +18,25 @@ module.exports = class MusicManager extends Map {
     }
 
     /**
-     * Returns a promise containing A Single Object or an array of Objects.
-     * @param { string } url The url of the video.
-     * @returns { Promise<Object | Array<Object>> }
+     * Returns an Object that contains video info.
+     * @param { string } id The video id that was retrieved when a url was matched.
+     * @returns { Object }
      */
-    async getVideos(url) {
-        if (url.match(/https:\/\/?(www\.)?youtube\.com\/watch\?v=(.*)/)) {
-            Yt.getVideoByID(url[2])
-                .then(v => { Promise.resolve(v); return; })
-                .catch(() => { Promise.reject("NO_RESULTS"); return; });
-        } else if (url.match(/https:\/\/?(www\.)?youtu\.be\/(.*)/)) {
-            Yt.getVideoByID(url[2])
-                .then(v => { Promise.resolve(v); return; })
-                .catch(() => { Promise.reject("NO_RESULTS"); return; });
-        } else {
-            Yt.searchForVideos(url, 5)
-                .then(async videos => {
-                    const results = [];
-                    for (let i = 0; i < videos.length; i++) {
-                        const res = await Yt.getVideoByID(video.videoID);
-                        results.push(res);
-                    }
-                    return Promise.resolve(results);
-                }).catch(() => { Promise.reject("NO_RESULTS"); return; })
-        }
+    async fromURL(urlMatch) {
+        const video = await Yt.getVideoByID(url);
+        if(!video) throw "NO_RESULTS";
+        return video;
+    }
+
+    /**
+     * Returns an Object Array that contains video info.
+     * @param { string } search The video to search for.
+     * @returns { Array<Object> }
+     */
+    async fromSearch(search) {
+        const videos = await Yt.searchForVideos(search);
+        if(!videos[0]) throw "NO_RESULTS";
+        return videos;
     }
 
 }
