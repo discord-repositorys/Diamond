@@ -10,6 +10,7 @@ module.exports = class MusicManager extends Map {
      * @param { Client } clientUser The Discord Client instance
      */
     constructor(clientUser) {
+        super();
         /**
          * The Discord.JS Client used for music.
          */
