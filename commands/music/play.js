@@ -21,7 +21,7 @@ class Play extends Command {
     if(!song) return message.reply("Provide a youtube link to play or search!");
     chan.join().then(async con => {
       const res = await this.client.music.getVideos(song);
-      if (!res.length) {
+      if (!res[0]) {
         con.play(ytdl(song.url, { filter: "audioonly" }));
         message.channel.send(`Now playing: **${song.title}**`);
       } else {
