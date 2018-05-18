@@ -9,7 +9,7 @@ function getID(str, callback) {
     }
 
     function search_video(query, callback) {
-        request("https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) + "&key=" + config.yt_api_key, (error, response, body) => {
+        request("https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) + "&key=" + process.env.YT, (error, response, body) => {
             if (error) return message.channel.send("There was an error finding the requested song.")
             try {
                 const json = JSON.parse(body);
