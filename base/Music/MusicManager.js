@@ -32,7 +32,7 @@ module.exports = class MusicManager extends Map {
                 .catch(() => { Promise.reject("NO_RESULTS"); return; });
         } else {
             Yt.searchForVideos(url, 5)
-                .then(videos => {
+                .then(async videos => {
                     const results = [];
                     for (let i = 0; i < videos.length; i++) {
                         const res = await Yt.getVideoByID(video.videoID);
