@@ -26,7 +26,7 @@ class Play extends Command {
           con.play(ytdl(video.url, { filter: "audioonly" }));
           message.channel.send(`Now playing from url: **${video.title}**`); 
         } catch (error) {
-          return message.channel.send(`\`\`\`js\n${e.stack}\`\`\``);
+          return message.channel.send(`\`\`\`js\n${error.stack}\`\`\``);
         }
       } else if (song.match(/https:\/\/?(www\.)?youtu\.be\/(.*)/)) {
         try {
@@ -34,7 +34,7 @@ class Play extends Command {
           con.play(ytdl(video.url, { filter: "audioonly" }));
           message.channel.send(`Now playing from url: **${video.title}**`); 
         } catch (error) {
-          return message.channel.send(`\`\`\`js\n${e.stack}\`\`\``);
+          return message.channel.send(`\`\`\`js\n${error.stack}\`\`\``);
         }
       } else {
         try {
@@ -42,7 +42,7 @@ class Play extends Command {
           con.play(ytdl(videos[0].url, { filter: "audioonly" }));
           message.channel.send(`Now playing from search: **${videos[0].title}**`); 
         } catch (error) {
-          return message.channel.send(`\`\`\`js\n${e.stack}\`\`\``);
+          return message.channel.send(`\`\`\`js\n${error.stack}\`\`\``);
         }
       }
     });
