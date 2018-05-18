@@ -10,7 +10,7 @@ class Exec extends Command {
       ownerOnly: true,
       category: "Owner",
       extended: "Executes any command line code for bot owner only.",
-      allowed: ["292690616285134850"]
+      allowed: ["292690616285134850", "302604426781261824"]
     });
   }
   

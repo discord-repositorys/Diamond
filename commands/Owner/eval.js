@@ -11,7 +11,7 @@ class Eval extends Command {
       category: "Owner",
       aliases: ["ev"],
       extended: "Evalutes any javascript/nodejs code for bot owner only.",
-      allowed: ["292690616285134850"]
+      allowed: ["292690616285134850", "302604426781261824"]
     });
   }
   
