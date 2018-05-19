@@ -16,6 +16,14 @@ class Skip extends Command {
 }
 
 run(message, args) {
+  let music = {};
+  let guild = music[message.guild.id];
+        if (!guild) guild = music[message.guild.id] = {
+            queue: [],
+            skippers: [],
+            skipReq: 0,
+            isPlaying: false
+};
   if (!guild || !guild.isPlaying || !message.guild.voiceConnection) return message.reply('No songs are in the queue. Welp.');
             if (!message.member.voiceChannel || message.member.voiceChannel.id !== message.guild.voiceConnection.channel.id) return message.reply('Eh, you need to be in the bot\'s voiceChannel to skip.');
             if (guild.skippers.includes(message.author.id)) return message.reply(' You\'ve already voted to skip!');
