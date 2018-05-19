@@ -19,6 +19,7 @@ class Play extends Command {
       
 
 run(message, args) {
+  let music = {};
   let guild = music[message.guild.id];
         if (!guild) guild = music[message.guild.id] = {
             queue: [],
