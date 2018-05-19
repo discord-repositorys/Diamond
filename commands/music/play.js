@@ -44,7 +44,6 @@ run(message, args) {
                });
             
             } else {
-              guild.isPlaying = true;
                getID(song, id => {
                if (!id) return message.reply(' unable to extract video');
                   ytdl.getInfo(id, (err, info) => {
