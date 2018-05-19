@@ -56,7 +56,9 @@ function getID(str, callback) {
         message.guild.voiceConnection.dispatcher.end()
     }
 
-module.exports.getID = getID;
-module.exports.search_video = search_video;
-module.exports.playMusic = playMusic;
-module.exports.skip_song = skip_song;
+module.exports = {
+        getID : getID,
+        playMusic: playMusic,
+        search_video: search_video,
+        skip_song: skip_song
+}
