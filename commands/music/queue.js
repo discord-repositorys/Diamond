@@ -16,6 +16,14 @@ class Queue extends Command {
 }
 
 run(message, args) {
+  let music = {};
+  let guild = music[message.guild.id];
+        if (!guild) guild = music[message.guild.id] = {
+            queue: [],
+            skippers: [],
+            skipReq: 0,
+            isPlaying: false
+};
   if (!guild) return message.reply('No songs in queue.');
             message.channel.send(`\`\`\`Queue:\n${guild.queue.map(a => `**${a.info.title}** as requested by **${a.requester.user.username}**`).join('\n\n') || 'No songs currently queued!'}\`\`\``)
 }
