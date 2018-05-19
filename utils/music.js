@@ -1,4 +1,6 @@
 const request = require('request');
+const ytdl = require('ytdl-core');
+const getYouTubeID = require('get-youtube-id');
 
 function getID(str, callback) {
         if(str.includes("youtube.com")){
