@@ -2,6 +2,18 @@ const request = require('request');
 const ytdl = require('ytdl-core');
 const getYouTubeID = require('get-youtube-id');
 
+let guild = music[message.guild.id];
+        if (!guild) guild = music[message.guild.id] = {
+            queue: [],
+            skippers: [],
+            skipReq: 0,
+            isPlaying: false
+};
+
+const command = args.shift().toLowerCase();
+let song = args.join(' ')
+
+
 function getID(str, callback) {
         if(str.includes("youtube.com")){
             callback(getYouTubeID(str));
