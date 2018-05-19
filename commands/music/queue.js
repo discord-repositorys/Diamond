@@ -7,7 +7,7 @@ class Queue extends Command {
   constructor(client) {
     super(client, {
       name: "queue",
-      description: "Show the music queue.".
+      description: "Show the music queue.",
       usage: "queue",
       category: "Music",
       extended: "Show the current song queue. You do not have to be in a voice channel to use this command.",
