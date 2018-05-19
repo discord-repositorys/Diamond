@@ -26,7 +26,6 @@ run(message, args) {
             skipReq: 0,
             isPlaying: false
     };
-        const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
         let song = args.join(' ')
         if (!message.member.voiceChannel) return message.reply('Connect to a voice channel first.');
