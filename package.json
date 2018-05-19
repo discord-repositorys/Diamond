@@ -45,6 +45,7 @@
     "unfluff": "^3.0.0",
     "uws": "^9.147.0",
     "webhooks4discord": "^1.0.0",
+    "ytdl": "^0.10.1",
     "yt-api": "^0.2.7",
     "ytdl-core": "latest",
     "zlib-sync": "^0.1.4"
