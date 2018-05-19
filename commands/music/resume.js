@@ -8,6 +8,7 @@ class Resume extends Command {
     super(client, {
       name: "resume",
       description: "Resume the paused song!",
+      category: "Music",
       usage: "resume",
       extended: "Resume a song that Diamond is playing. Must be in the voice channel in order for this to work.",
     });
