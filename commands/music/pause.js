@@ -17,7 +17,7 @@ class Pause extends Command {
   }
   
   
-  run(message, args {
+  run(message, args) {
        let voiceChannel = message.member.voiceChannel
             if (!voiceChannel || voiceChannel.id !== message.guild.voiceConnection.channel.id) return message.reply(`You must be in a voice channel to pause the music.`);
             try {
